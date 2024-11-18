@@ -22,6 +22,9 @@ class RPGPROJECT_API AWarriorHeroCharacter : public AWarriorBaseCharacter
 public:
 	AWarriorHeroCharacter();
 protected:
+
+	virtual void PossessedBy(AController* NewController) override;
+
 	// Called when the game starts or when spawned
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 	virtual void BeginPlay() override;

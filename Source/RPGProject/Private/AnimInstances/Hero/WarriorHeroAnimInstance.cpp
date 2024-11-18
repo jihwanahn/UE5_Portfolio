@@ -16,4 +16,15 @@ void UWarriorHeroAnimInstance::NativeInitializeAnimation()
 void UWarriorHeroAnimInstance::NativeThreadSafeUpdateAnimation(float DeltaSeconds)
 {
 	Super::NativeThreadSafeUpdateAnimation(DeltaSeconds);
+
+	if (bHasAcceleration)
+	{
+		IdleElapsedTime = 0.0f;
+		bShouldEnterRelaxState = false;
+	}
+	else
+	{
+		IdleElapsedTime += DeltaSeconds;
+		bShouldEnterRelaxState = (IdleElapsedTime >= EnterRelaxStateThreshold);
+	}
 }
