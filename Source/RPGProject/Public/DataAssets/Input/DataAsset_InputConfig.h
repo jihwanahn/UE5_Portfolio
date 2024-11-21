@@ -37,9 +37,9 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	UInputMappingContext* DefaultMappingContext;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (TitleProperty = "InputTag"))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (TitleProperty = "InputAction"))
 	TArray< FWarriorInputActionConfig> NativeInputActions;
 
-	UInputAction* FindNativeInputAction(const FGameplayTag& InputTag) const;
+	UInputAction* FindNativeInputAction(const FGameplayTag& InInputTag) const;
 	
 };

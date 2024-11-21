@@ -31,6 +31,9 @@ void AWarriorBaseCharacter::PossessedBy(AController* NewController)
 	if (IsValid(WarriorAbilitySystemComponent))
 	{
 		WarriorAbilitySystemComponent->InitAbilityActorInfo(this, this);
+
+		ensure(!CharacterStartUpData.IsNull());
+		ensureMsgf(!CharacterStartUpData.IsNull(), TEXT("CharacterStartUpData is not assigned to %s"), *GetName());
 	}
 }
 
